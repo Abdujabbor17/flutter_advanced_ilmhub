@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Validation extends StatefulWidget {
+  const Validation({super.key});
+
   @override
   _ValidationState createState() => _ValidationState();
 }
@@ -112,6 +114,23 @@ class _ValidationState extends State<Validation> {
                 }
               },
               child: Text('Submit'),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            ExpansionTile(
+              title: const Text('Expandable List Item'),
+              children: [
+                ListTile(
+                  title: const Text('Child 1'),
+                  onTap: () {},
+                ),
+                ListTile(
+                  title: const Text('Child 2'),
+                  onTap: () {},
+                ),
+                // Add more ListTiles as needed
+              ],
             )
           ],
         ),
@@ -121,7 +140,7 @@ class _ValidationState extends State<Validation> {
 }
 
 String? getRandImg() {
-  var random =  Random();
+  var random = Random();
   var randomNumber = random.nextInt(6) + 1;
 
   switch (randomNumber) {
@@ -152,4 +171,5 @@ String? getRandImg() {
 
       return 'ng rasm';
   }
+  return null;
 }
